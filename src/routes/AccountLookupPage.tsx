@@ -84,7 +84,7 @@ export function AccountLookupPage() {
             <p className="text-sm text-ink-700/50">Loading…</p>
           )}
           {selectedAccountNo && !account.isLoading && !account.data && (
-            <p className="text-sm text-[#b3432f]">Account not found.</p>
+            <p className="text-sm text-[#d92d20]">Account not found.</p>
           )}
           {account.data && (
             <div className="flex flex-col gap-3">

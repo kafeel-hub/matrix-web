@@ -87,7 +87,7 @@ export function PartyFormView({
     return <p className="text-sm text-ink-700/50">Loading {singularLabel}…</p>;
   }
   if (isEdit && !existing.isLoading && !existing.data) {
-    return <p className="text-sm text-[#b3432f]">{capitalize(singularLabel)} not found.</p>;
+    return <p className="text-sm text-[#d92d20]">{capitalize(singularLabel)} not found.</p>;
   }
 
   return (
@@ -215,8 +215,8 @@ export function PartyFormView({
         </FormSection>
 
         {errors.length > 0 && (
-          <div className="rounded-md border border-[#b3432f]/30 bg-[#b3432f]/5 p-4">
-            <ul className="list-inside list-disc text-sm text-[#b3432f]">
+          <div className="rounded-md border border-[#d92d20]/30 bg-[#d92d20]/5 p-4">
+            <ul className="list-inside list-disc text-sm text-[#d92d20]">
               {errors.map((e) => (
                 <li key={e.code}>{e.message}</li>
               ))}
@@ -224,7 +224,7 @@ export function PartyFormView({
           </div>
         )}
         {conflictMessage && (
-          <div className="rounded-md border border-[#b3432f]/30 bg-[#b3432f]/5 p-4 text-sm text-[#b3432f]">
+          <div className="rounded-md border border-[#d92d20]/30 bg-[#d92d20]/5 p-4 text-sm text-[#d92d20]">
             {conflictMessage}
           </div>
         )}
@@ -278,7 +278,7 @@ function TextInput({
     <div className="flex flex-col gap-1">
       <label className="text-xs font-medium text-ink-700/70">
         {label}
-        {required && <span className="text-[#b3432f]"> *</span>}
+        {required && <span className="text-[#d92d20]"> *</span>}
       </label>
       <input
         value={value}

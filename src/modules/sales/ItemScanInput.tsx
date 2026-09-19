@@ -57,7 +57,7 @@ export function ItemScanInput({ nextLineNo, onItemFound }: ItemScanInputProps) {
       />
 
       {status === "not-found" && (
-        <p className="mt-1 text-xs text-[#b3432f]">No active item found for that code.</p>
+        <p className="mt-1 text-xs text-[#d92d20]">No active item found for that code.</p>
       )}
 
       {code.trim().length >= 2 && status !== "loading" && (search.data?.length ?? 0) > 0 && (

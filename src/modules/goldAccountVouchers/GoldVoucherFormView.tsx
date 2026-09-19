@@ -114,8 +114,8 @@ export function GoldVoucherFormView({
       </div>
 
       {status === "posted" && (
-        <div className="mb-6 rounded-md border border-[#4c7a4a]/30 bg-[#4c7a4a]/10 p-4">
-          <p className="font-medium text-[#3c6339]">Voucher #{voucherNo} posted successfully.</p>
+        <div className="mb-6 rounded-md border border-[#039855]/30 bg-[#039855]/10 p-4">
+          <p className="font-medium text-[#027a48]">Voucher #{voucherNo} posted successfully.</p>
           <Button variant="secondary" onClick={startNewVoucher} className="mt-3">
             Start new voucher
           </Button>
@@ -289,9 +289,9 @@ export function GoldVoucherFormView({
         </div>
 
         {errors.length > 0 && (
-          <div className="rounded-md border border-[#b3432f]/30 bg-[#b3432f]/5 p-4">
-            <p className="mb-2 text-sm font-medium text-[#b3432f]">The voucher couldn't be saved:</p>
-            <ul className="list-inside list-disc text-sm text-[#b3432f]">
+          <div className="rounded-md border border-[#d92d20]/30 bg-[#d92d20]/5 p-4">
+            <p className="mb-2 text-sm font-medium text-[#d92d20]">The voucher couldn't be saved:</p>
+            <ul className="list-inside list-disc text-sm text-[#d92d20]">
               {errors.map((e, i) => (
                 <li key={i}>{e.message}</li>
               ))}

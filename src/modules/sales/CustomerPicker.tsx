@@ -182,7 +182,7 @@ export function CustomerPicker({ header, onChange }: CustomerPickerProps) {
             </Button>
           </div>
           {retailStatus === "not-found" && (
-            <p className="text-xs text-[#b3432f]">
+            <p className="text-xs text-[#d92d20]">
               No customer found with that civil ID or mobile number — try walk-in instead.
             </p>
           )}

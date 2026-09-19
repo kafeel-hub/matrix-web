@@ -128,8 +128,8 @@ export function MasterMaintenanceView<TResponse, TSave>({
         </div>
 
         {messages.length > 0 && (
-          <div className="mt-4 rounded-md border border-[#b3432f]/30 bg-[#b3432f]/5 p-3">
-            <ul className="list-inside list-disc text-sm text-[#b3432f]">
+          <div className="mt-4 rounded-md border border-[#d92d20]/30 bg-[#d92d20]/5 p-3">
+            <ul className="list-inside list-disc text-sm text-[#d92d20]">
               {messages.map((m, i) => (
                 <li key={i}>{m}</li>
               ))}
@@ -180,7 +180,7 @@ export function MasterMaintenanceView<TResponse, TSave>({
                       <span
                         className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                           status === 0
-                            ? "bg-[#4c7a4a]/10 text-[#3c6339]"
+                            ? "bg-[#039855]/10 text-[#027a48]"
                             : "bg-ink-900/5 text-ink-700/60"
                         }`}
                       >

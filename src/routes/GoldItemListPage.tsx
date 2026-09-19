@@ -139,7 +139,7 @@ export function GoldItemListPage() {
                   <span
                     className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                       item.status === 0
-                        ? "bg-[#4c7a4a]/10 text-[#3c6339]"
+                        ? "bg-[#039855]/10 text-[#027a48]"
                         : "bg-ink-900/5 text-ink-700/60"
                     }`}
                   >
@@ -153,7 +153,7 @@ export function GoldItemListPage() {
                       onClick={() => confirmDeactivate(item)}
                       className={`text-xs font-medium underline-offset-2 hover:underline ${
                         pendingDeactivateId === item.itemId
-                          ? "text-[#b3432f]"
+                          ? "text-[#d92d20]"
                           : "text-ink-700/50 hover:text-ink-900"
                       }`}
                     >

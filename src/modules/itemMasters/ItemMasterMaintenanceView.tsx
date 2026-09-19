@@ -156,8 +156,8 @@ export function ItemMasterMaintenanceView<TResponse, TSave>({
         </div>
 
         {messages.length > 0 && (
-          <div className="mt-4 rounded-md border border-[#b3432f]/30 bg-[#b3432f]/5 p-3">
-            <ul className="list-inside list-disc text-sm text-[#b3432f]">
+          <div className="mt-4 rounded-md border border-[#d92d20]/30 bg-[#d92d20]/5 p-3">
+            <ul className="list-inside list-disc text-sm text-[#d92d20]">
               {messages.map((m, i) => (
                 <li key={i}>{m}</li>
               ))}
@@ -225,7 +225,7 @@ export function ItemMasterMaintenanceView<TResponse, TSave>({
                   <td className="px-3 py-2">
                     <span
                       className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                        isActive ? "bg-[#4c7a4a]/10 text-[#3c6339]" : "bg-ink-900/5 text-ink-700/60"
+                        isActive ? "bg-[#039855]/10 text-[#027a48]" : "bg-ink-900/5 text-ink-700/60"
                       }`}
                     >
                       {isActive ? "Active" : "Inactive"}
@@ -246,7 +246,7 @@ export function ItemMasterMaintenanceView<TResponse, TSave>({
                           onClick={() => handleDeactivate(id)}
                           className={`text-xs font-medium underline-offset-2 hover:underline ${
                             pendingDeactivateId === id
-                              ? "text-[#b3432f]"
+                              ? "text-[#d92d20]"
                               : "text-ink-700/50 hover:text-ink-900"
                           }`}
                         >

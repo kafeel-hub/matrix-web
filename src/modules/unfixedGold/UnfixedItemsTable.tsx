@@ -90,7 +90,7 @@ export function UnfixedItemsTable({ items, onUpdate, onRemove }: UnfixedItemsTab
                   type="button"
                   onClick={() => onRemove(line.key)}
                   aria-label={`Remove ${line.itemDescription}`}
-                  className="text-ink-700/40 hover:text-[#b3432f]"
+                  className="text-ink-700/40 hover:text-[#d92d20]"
                 >
                   ✕
                 </button>

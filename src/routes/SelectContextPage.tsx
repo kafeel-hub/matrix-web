@@ -3,26 +3,47 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useAuthStore } from "@/auth/auth-store";
 import { useSelectContext } from "@/auth/use-auth";
 import { Button } from "@/shared/components/Button";
+import { SelectField } from "@/shared/components/SelectField";
+import backgroundImage from "@/assets/images/background.jpg";
 
 export function SelectContextPage() {
   const auth = useAuthStore((s) => s.auth);
   const selectContext = useSelectContext();
   const navigate = useNavigate();
-  const [selected, setSelected] = useState<{ companyId: number; locationId: number } | null>(null);
+  const [companyId, setCompanyId] = useState<number | "">("");
+  const [locationId, setLocationId] = useState<number | "">("");
 
   // Guard: this page only makes sense mid-flow. If someone lands here
   // directly (deep link, refresh — though we deliberately don't persist
-  // this state, see auth-store.ts) bounce them back to login.
+  // this state, see auth-store.ts) bounce them back to login. This has to
+  // come after every hook above it (useState) and before any plain,
+  // non-hook derived values below (companies.find isn't a hook, so it's
+  // fine positioned after this return — a genuine useMemo would not be).
   if (auth.status !== "awaiting-context") {
     return <Navigate to="/login" replace />;
   }
 
+  const companies = auth.companies;
+  // Two cascading dropdowns instead of every company's every location laid
+  // out as one long list of buttons — company first, then only that
+  // company's locations, matching the pattern already used for jewel-besto
+  // -web's equivalent screen. companies.find() over a handful of rows is
+  // cheap enough that this doesn't need useMemo.
+  const selectedCompany = companies.find((c) => c.companyId === companyId);
+  const locationOptions = selectedCompany?.locations ?? [];
+
+  function handleCompanyChange(value: string) {
+    const id = value === "" ? "" : Number(value);
+    setCompanyId(id);
+    setLocationId(""); // company changed -> old location choice no longer valid
+  }
+
   async function handleContinue() {
-    if (!selected || auth.status !== "awaiting-context") return;
+    if (companyId === "" || locationId === "" || auth.status !== "awaiting-context") return;
     const response = await selectContext.mutateAsync({
       preAuthToken: auth.preAuthToken,
-      companyId: selected.companyId,
-      locationId: selected.locationId,
+      companyId,
+      locationId,
     });
     if (response.succeeded) navigate("/", { replace: true });
   }
@@ -35,62 +56,64 @@ export function SelectContextPage() {
         : null;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-ink-950 px-4">
-      <div className="w-full max-w-md">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-parchment-50 px-4">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 w-full max-w-sm">
         <div className="mb-6 text-center">
-          <p className="font-display text-2xl text-parchment-100">Choose where you're working</p>
-          <p className="mt-1 text-sm text-parchment-100/50">
-            Signed in as {auth.user.userName}
-          </p>
+          <p className="font-display text-2xl text-ink-900">Choose where you're working</p>
+          <p className="mt-1 text-sm text-ink-700/60">Signed in as {auth.user.userName}</p>
         </div>
 
-        <div className="flex flex-col gap-3 rounded-lg border border-parchment-100/10 bg-ink-900 p-4">
-          {auth.companies.map((company) => (
-            <div key={company.companyId}>
-              <p className="px-1 pb-2 text-xs font-medium uppercase tracking-wide text-parchment-100/40">
-                {company.companyName}
-              </p>
-              <div className="flex flex-col gap-1.5">
-                {company.locations.map((location) => {
-                  const isSelected =
-                    selected?.companyId === company.companyId &&
-                    selected?.locationId === location.locationId;
-                  return (
-                    <button
-                      key={location.locationId}
-                      type="button"
-                      onClick={() =>
-                        setSelected({ companyId: company.companyId, locationId: location.locationId })
-                      }
-                      className={`rounded-md border px-3 py-2.5 text-left text-sm transition-colors ${
-                        isSelected
-                          ? "border-brass-500 bg-brass-500/10 text-parchment-50"
-                          : "border-parchment-100/10 text-parchment-100/80 hover:border-parchment-100/25"
-                      }`}
-                    >
-                      {location.locationName}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
+        <div className="rounded-lg border border-ink-900/10 bg-white p-6 shadow-sm">
+          <div className="flex flex-col gap-4">
+            <SelectField
+              label="Company"
+              value={companyId}
+              onChange={(e) => handleCompanyChange(e.target.value)}
+            >
+              <option value="">Select a company…</option>
+              {companies.map((company) => (
+                <option key={company.companyId} value={company.companyId}>
+                  {company.companyName}
+                </option>
+              ))}
+            </SelectField>
+
+            <SelectField
+              label="Location"
+              value={locationId}
+              onChange={(e) => setLocationId(e.target.value === "" ? "" : Number(e.target.value))}
+              disabled={!selectedCompany}
+            >
+              <option value="">{selectedCompany ? "Select a location…" : "Choose a company first"}</option>
+              {locationOptions.map((location) => (
+                <option key={location.locationId} value={location.locationId}>
+                  {location.locationName}
+                </option>
+              ))}
+            </SelectField>
+          </div>
+
+          {errorMessage && (
+            <p role="alert" className="mt-3 text-sm text-error-600">
+              {errorMessage}
+            </p>
+          )}
+
+          <Button
+            onClick={handleContinue}
+            disabled={companyId === "" || locationId === ""}
+            loading={selectContext.isPending}
+            className="mt-5 w-full justify-center"
+          >
+            Continue
+          </Button>
         </div>
-
-        {errorMessage && (
-          <p role="alert" className="mt-3 text-sm text-[#e08370]">
-            {errorMessage}
-          </p>
-        )}
-
-        <Button
-          onClick={handleContinue}
-          disabled={!selected}
-          loading={selectContext.isPending}
-          className="mt-4 w-full justify-center"
-        >
-          Continue
-        </Button>
       </div>
     </div>
   );

@@ -106,7 +106,7 @@ export function PartyListView({
                     {party.name}
                   </Link>
                   {party.blackListed && (
-                    <span className="ml-2 rounded-full bg-[#b3432f]/10 px-2 py-0.5 text-xs font-medium text-[#b3432f]">
+                    <span className="ml-2 rounded-full bg-[#d92d20]/10 px-2 py-0.5 text-xs font-medium text-[#d92d20]">
                       Blacklisted
                     </span>
                   )}
@@ -120,7 +120,7 @@ export function PartyListView({
                   <span
                     className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                       party.status === 0
-                        ? "bg-[#4c7a4a]/10 text-[#3c6339]"
+                        ? "bg-[#039855]/10 text-[#027a48]"
                         : "bg-ink-900/5 text-ink-700/60"
                     }`}
                   >
@@ -134,7 +134,7 @@ export function PartyListView({
                       onClick={() => confirmDeactivate(party)}
                       className={`text-xs font-medium underline-offset-2 hover:underline ${
                         pendingDeactivateId === party.partyId
-                          ? "text-[#b3432f]"
+                          ? "text-[#d92d20]"
                           : "text-ink-700/50 hover:text-ink-900"
                       }`}
                     >

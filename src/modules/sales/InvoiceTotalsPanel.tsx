@@ -59,10 +59,10 @@ export function InvoiceTotalsPanel({
         <span className="tabular text-ink-700/60">{money(totalPaid, currencySymbol)}</span>
       </div>
       <div className="flex items-center justify-between text-sm">
-        <span className={balanceDue > 0 ? "font-medium text-[#b3432f]" : "text-ink-700/60"}>
+        <span className={balanceDue > 0 ? "font-medium text-[#d92d20]" : "text-ink-700/60"}>
           {balanceDue > 0 ? "Balance due" : balanceDue < 0 ? "Overpaid" : "Balance"}
         </span>
-        <span className={`tabular ${balanceDue !== 0 ? "font-medium text-[#b3432f]" : "text-ink-700/60"}`}>
+        <span className={`tabular ${balanceDue !== 0 ? "font-medium text-[#d92d20]" : "text-ink-700/60"}`}>
           {money(Math.abs(balanceDue), currencySymbol)}
         </span>
       </div>

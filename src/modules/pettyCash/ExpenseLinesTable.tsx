@@ -44,7 +44,7 @@ export function ExpenseLinesTable({ lines, onAdd, onUpdate, onRemove }: ExpenseL
               type="button"
               onClick={() => onRemove(line.key)}
               aria-label="Remove line"
-              className="pb-1.5 text-ink-700/40 hover:text-[#b3432f]"
+              className="pb-1.5 text-ink-700/40 hover:text-[#d92d20]"
             >
               ✕
             </button>

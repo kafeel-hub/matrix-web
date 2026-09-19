@@ -16,7 +16,7 @@ export function Button({
   const base =
     "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60";
   const variants = {
-    primary: "bg-ink-900 text-parchment-50 hover:bg-ink-800",
+    primary: "bg-brass-500 text-white hover:bg-brass-600",
     secondary: "border border-ink-700/25 text-ink-900 hover:bg-ink-900/5",
   };
 

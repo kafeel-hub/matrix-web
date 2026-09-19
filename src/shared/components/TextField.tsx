@@ -22,7 +22,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
           {...props}
         />
         {error && (
-          <p id={`${inputId}-error`} className="text-sm text-[#b3432f]">
+          <p id={`${inputId}-error`} className="text-sm text-[#d92d20]">
             {error}
           </p>
         )}

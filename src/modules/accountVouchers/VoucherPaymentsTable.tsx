@@ -88,7 +88,7 @@ function PaymentRow({
           type="button"
           onClick={onRemove}
           aria-label="Remove payment"
-          className="pb-1.5 text-ink-700/40 hover:text-[#b3432f]"
+          className="pb-1.5 text-ink-700/40 hover:text-[#d92d20]"
         >
           ✕
         </button>

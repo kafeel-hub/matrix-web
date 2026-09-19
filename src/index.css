@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,10 +11,29 @@
   body {
     @apply bg-parchment-50 text-ink-900 font-sans antialiased;
   }
-  /* Visible keyboard focus everywhere, not just on inputs */
+  /* Some browsers render their own default blue outline on plain :focus
+     (not just :focus-visible) for form elements, which can show through
+     as a stray blue ring even though every custom style here uses gold.
+     Suppressing :focus entirely and relying only on :focus-visible avoids
+     that regardless of browser/input-method quirks. */
+  :focus {
+    outline: none;
+  }
   :focus-visible {
     outline: 2px solid theme("colors.brass.500");
     outline-offset: 2px;
+  }
+  /* Chrome/Safari paint their own blue/yellow tinted background on
+     autofilled inputs via -webkit-autofill, regardless of the input's own
+     background-color -- this is the other common source of a stray blue
+     tint on a form that otherwise has none in its own styles. The insanely
+     long transition-delay is the standard trick to override it, since
+     background-color itself can't be set directly on this pseudo-class. */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: theme("colors.ink.900");
+    transition: background-color 9999s ease-in-out 0s;
   }
 }
 
