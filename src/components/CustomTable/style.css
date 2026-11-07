@@ -1,0 +1,142 @@
+.table-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Table row */
+  .table-row {
+    margin-bottom: 10px;
+  }
+  
+  /* Individual row */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  
+  /* Cell styling */
+  .cell {
+    flex: 1 1 calc(20% - 10px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .cell input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Label */
+  .label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Divider between rows */
+  .divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+  }
+  
+  /* Delete button */
+  .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Add row button */
+  .add-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .add-btn:hover {
+    background-color: #2980b9;
+  }
+
+  .width--5{
+    max-width: 5%;
+  }
+  
+  .width--15{
+    max-width: 15%;
+  }
+
+  .width--10{
+    max-width: 10%;
+  }
+
+  .custom-table-cell{
+    text-align: left;
+  }
+
+  .delete-btn-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .sn-no-custom-width{
+    width: 3% !important;
+  }
+  .custom-width{
+    width: 10% !important;
+  }
+  .column-spacing .MuiBox-root.css-14q3lhy {
+    padding: 4px !important;
+  }
+  @media (max-width: 768px) {
+    .cell {
+      flex: 1 1 calc(50% - 10px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cell {
+      flex: 1 1 100%;
+    }
+    .custom-width{
+        width: 100% !important;
+    }
+    .sn-no-custom-width{
+      width: 100% !important;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .custom-width{
+        width: revert-layer !important;
+    }
+
+    .sn-no-custom-width{
+      width: revert-layer !important;
+    }
+  }

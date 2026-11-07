@@ -1,0 +1,424 @@
+:root {
+  /* Light theme variables */
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #00a76f;
+  --secondary-color: #6c757d;
+  --border-color: #ced4da;
+  --input-background: #f8f9fa;
+  --input-text: #212529;
+  --input-border: #ced4da;
+  /* --input-focus-border: #007bff; */
+  --placeholder-color: #6c757d;
+  --button-background: #00a76f;
+  --button-text: #ffffff;
+  --hover-background: #068e44;
+  --hover-text: #ffffff;
+  --error-color: #dc3545;
+  --btn-primary-background:#068e44;
+  --hover-btn-primary-background:#0eb358;
+
+}
+
+[data-theme="dark"] {
+  /* Dark theme variables */
+  --background-color: #1E1E1E; /* Navbar, sidebar, forms, and boxes */
+  --text-color: rgba(255, 255, 255, 0.87); /* Text and icon */
+  --primary-color: #90caf9; /* For links and interactive elements */
+  --secondary-color: #b0bec5;
+  --border-color: #37474f;
+  --input-background: #1E1E1E;
+  --input-text: rgba(255, 255, 255, 0.87);
+  --input-border: #37474f;
+  /* --input-focus-border: #90caf9; */
+  --placeholder-color: #b0bec5;
+  --button-background: #1E88E5;
+  --button-text: rgba(255, 255, 255, 0.87);
+  /* --hover-background: #1565c0; */
+  --hover-text: rgba(255, 255, 255, 0.87);
+  --error-color: #EF5350;
+  --page-background: black; 
+  --btn-primary-background:#068e44;
+  --hover-btn-primary-background:#0eb358;
+
+}
+
+
+@font-face {
+  font-family: 'SoDoSans-Regular';
+  src: url('../assets/fonts/SoDoSans-Regular.woff2') format('woff2'),
+       url('../assets/fonts/SoDoSans-Regular.fb96a065.woff') format('woff'),
+       /* url('./assets/fonts/YourFont.ttf') format('truetype'); */
+}
+
+@font-face {
+  font-family: 'SoDoSans-SemiBold';
+  src: url('../assets/fonts/SoDoSans-SemiBold.6aebdeb6.woff') format('woff'),
+       url('../assets/fonts/SoDoSans-SemiBold.woff2') format('woff2'),
+}
+
+@font-face {
+  font-family: 'SoDoSans-Bold';
+  src: url('../assets/fonts/SoDoSans-Bold.49f6eaa3.woff') format('woff'),
+       url('../assets/fonts/SoDoSans-Bold.woff2') format('woff2'),
+}
+
+
+body {
+  font-family: 'SoDoSans-Regular' !important;
+}
+
+h1 {
+  font-family: 'SoDoSans-Bold' !important;
+}
+h2,h3,h4 {
+  font-family: 'SoDoSans-SemiBold' !important;
+}
+
+.css-wh9b92-MuiFormControl-root .MuiFormLabel-root.Mui-focused {
+  font-family: 'SoDoSans-SemiBold';
+}
+
+.css-xkovcb-MuiFormLabel-root-MuiInputLabel-root, .css-1lrnf2w-MuiFormLabel-root-MuiInputLabel-root {
+  font-family: 'SoDoSans-SemiBold' !important;
+}
+
+.custom-table-cell .label{
+  font-family: 'SoDoSans-SemiBold' !important;
+
+}
+
+/* General Form Styles */
+form {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.25rem;
+  background-color: var(--input-background);
+  color: var(--input-text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+button {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hover-background);
+  color: var(--hover-text);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Checkboxes and Radio Buttons */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+
+
+
+
+
+custom-card_001{
+  border-radius: 10px !important;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) !important; 
+
+}
+
+.custom-btn{
+  /* padding: 10px 20px !important; */
+  border-radius: 8px !important;
+  font-size: 16px;
+}
+.custom-btn-black {
+  border: none;
+  background-color: #00a76f !important; 
+  /* #1C252E */
+  color: #ffffff !important; 
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important; 
+
+}
+
+.custom-btn-black:hover {
+  background-color: #00a76f !important; 
+  /* #333A46  */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2) !important; 
+}
+
+.custom-btn-white {
+  border: 1px solid rgba(0, 0, 0, 0.12) !important; 
+  background-color: #00a76f !important; 
+  color: #ffffff !important; 
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s !important;
+}
+
+.custom-btn-white:hover {
+  background-color: #00a76f !important;
+  border-color: rgba(0, 0, 0, 0.2) !important; 
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.custom-form{
+  border:none;
+}
+
+.fixed-header-section{
+  padding: 12px;
+  text-align: center;
+}
+
+
+.custom-table-cell{
+  padding: 10px 2px !important;
+}
+.custom-table-cell-dropdown{
+  padding: 10px 2px !important;
+  min-width: 150px !important
+}
+
+.header-accordion button{
+  background-color: inherit;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 1200px) {
+  .main-body-container{
+    margin-top: 92px !important;
+
+  }
+
+}
+
+@media screen and (max-width: 1199px) {
+  .main-body-container{
+    margin-top: 190px !important;
+
+  }
+
+}
+
+@media screen and (max-width: 899px) {
+  .main-body-container{
+    margin-top: 270px !important;
+
+  }
+}
+
+
+.w--15{
+  width: 15% !important;
+}
+
+.w--20{
+  width: 20% !important;
+}
+
+.w--10{
+  width: 10% !important;
+  
+}
+
+.custom-select-input input:focus, textarea:focus{
+  border-color: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* .custom-select-input label{
+  color: #000000 !important;
+} */
+
+.custom-input-field input:focus{
+  border-color: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.p--16{
+  padding: 1rem !important;
+}
+
+.input-box-styling input, .MuiSelect-select{
+  padding: 8px 12px !important;
+  min-height: 25px !important;
+}
+
+.input-box-styling .MuiInputBase-root{
+  border-radius: 8px;
+}
+
+
+.payment-breakdown-section{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.action-btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.action-btn-container svg{
+  cursor: pointer;
+
+}
+
+/* .action-btn-container {
+
+
+} */
+
+.invoice-header{
+  background-color: #e6f4ed;
+  padding: 8px 1rem;
+  border: 1px solid;
+  border-color: #84c297;
+  border-radius: 4px;
+}
+
+.invoice-header-details-box{
+  padding: 1rem;
+  border: 1px solid;
+  border-color: #e6ebf1;
+  border-radius: 4px;
+}
+
+.main-heading{
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  line-height: 1.27 !important;
+  /* font-family: "Public Sans", sans-serif; */
+}
+
+.btn-grp{
+  text-align: right;
+}
+
+.view-invoice-payment{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+}
+
+.custom-primary-button{
+  background-color: var(--btn-primary-background) !important;
+}
+
+.custom-primary-button:hover{
+  background-color: var(--hover-btn-primary-background) !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.text-error{
+  color: #d32f2f;
+}
+
+
+.col-error{
+  color: #d32f2f !important;
+}
+
+
+
+
+.css-19midj6 {
+  padding: 8px !important;
+}
+.css-tzhodp-MuiGrid2-root{
+  padding-bottom: 0px !important;
+}
+
+.css-h7y1sn-MuiGrid2-root{
+padding-top: 0px !important;
+}
+
+.css-6nu9qy-MuiGrid2-root{
+  margin-top: 0px !important;
+}
+
+.css-r3mtzt-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root{
+  margin-top: 4px !important;
+}
+
+.css-oicatc-MuiGrid2-root{
+  margin-top: 0px !important;
+}
+/* .css-11e9cbv-MuiDivider-root {
+  margin: 0 !important;
+
+} */
+@media print {
+  body * {
+    visibility: hidden; /* hide everything */
+  }
+  #printable-area, #printable-area * {
+    visibility: visible; /* show only printable-area and its children */
+  }
+  #printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

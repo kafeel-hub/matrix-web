@@ -1,0 +1,59 @@
+import React, { useEffect } from "react";
+import LoginForm from "../components/Auth/LoginForm";
+import { Box } from "@mui/material";
+import backgroundImage from "../assets/images/background.jpg";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+
+const LoginPage = () => {
+
+  const navigate = useNavigate();
+  const token = useSelector((state) => state.auth.token);
+
+  useEffect(() => {
+    if (token) {
+      navigate("/");  
+    }
+  }, [token, navigate]);
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+      }}
+    >
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          zIndex: -1,
+          opacity: 0.2,
+        }}
+      />
+
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+          zIndex: 1,
+          padding: "1.2rem",
+        }}
+      >
+        <LoginForm />
+      </Box>
+    </Box>
+  );
+};
+
+export default LoginPage;
