@@ -1,0 +1,16 @@
+{
+  "header": {
+    "voucherDate": "2026-09-16",
+    "cashAccountNo": "12011",
+    "manualNo": "",
+    "remarks": "Petty cash expense test"
+  },
+  "items": [
+    {
+      "lineNo": 1,
+      "accountNo": "301001",
+      "narration": "Petty cash expense test",
+      "amount": 40.000
+    }
+  ]
+}

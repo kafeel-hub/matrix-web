@@ -1,0 +1,68 @@
+{
+  "succeeded": true,
+  "requiresContextSelection": false,
+  "accessToken": "<jwt>",
+  "accessTokenExpiresAtUtc": "2026-09-14T05:30:00Z",
+  "user": {
+    "userNo": "001",
+    "userName": "admin",
+    "loginName": "admin",
+    "groupNo": 1,
+    "groupName": "Super Administrator",
+    "email": "",
+    "posFlag": 0,
+    "editFlag": 0,
+    "stockAccessFlag": 0,
+    "nonBrandFlag": 0,
+    "discountPercent": 0,
+    "viewPreviousEntry": 0
+  },
+  "context": {
+    "companyId": 1,
+    "companyName": "PLAZA JEWELLERY (WATIYA)",
+    "locationId": 1,
+    "locationName": "MAIN",
+    "financialYear": {
+      "yearNo": 2026,
+      "startDate": "01/01/2026",
+      "endDate": "31/12/2026",
+      "openDate": "01/01/2026",
+      "openStatus": "OPEN"
+    },
+    "companySettings": {
+      "nameArabic": "",
+      "baseCurrencyId": "KWD",
+      "baseCurrencyName": "Kuwaiti Dinar",
+      "baseCurrencyDigit": 3,
+      "basePureGoldPurity": 999,
+      "metalSymbol": "g",
+      "currencySymbol": "KD",
+      "defaultDateFormat": "dd/MM/yyyy"
+    },
+    "locationSettings": {
+      "nameArabic": "",
+      "shortName": "MAIN",
+      "phone": "",
+      "address1": "",
+      "address2": ""
+    }
+  },
+  "modules": {
+    "administration": true,
+    "files": true,
+    "finance": true,
+    "inventory": true,
+    "purchases": true,
+    "sales": true,
+    "fixedAssets": false,
+    "tools": true
+  },
+  "lookups": {
+    "salesmen": [],
+    "paymentTypes": [],
+    "areas": [],
+    "nationalities": [],
+    "currencies": []
+  },
+  "companies": []
+}

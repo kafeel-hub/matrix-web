@@ -1,0 +1,21 @@
+{
+  "header": {
+    "voucherDate": "2026-09-16",
+    "accountNo": "REPLACE_WITH_ACTIVE_POSTABLE_ACCOUNT",
+    "manualNo": "",
+    "paidTo": "Gold payment test",
+    "remarks": "Gold payment voucher API test",
+    "civilId": "",
+    "phoneNo": "",
+    "salesman": "",
+    "discountPercentage": 0,
+    "discountAmount": 0,
+    "fixedGoldWeight": 1.000,
+    "fixedGoldRate": 40.000,
+    "fixedGoldAmount": 40.000,
+    "payGoldPurity": 999,
+    "payGoldWeight": 1.000,
+    "payGoldRemarks": "999 purity gold payment"
+  },
+  "payments": [{"lineNo":1,"paymentTypeId":"REPLACE_WITH_ACTIVE_PAY_ID","amount":40.000,"accountNo":"","currencyId":"001","exchangeRate":1,"currencyAmount":40.000,"chequeBank":"","chequeNo":"","chequeDate":null}]
+}

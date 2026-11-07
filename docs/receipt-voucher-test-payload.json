@@ -1,0 +1,28 @@
+{
+  "header": {
+    "voucherDate": "2026-09-16",
+    "accountNo": "REPLACE_WITH_ACTIVE_POSTABLE_ACCOUNT",
+    "manualNo": "",
+    "paidTo": "Test receipt",
+    "remarks": "Receipt voucher API test",
+    "civilId": "",
+    "phoneNo": "",
+    "salesman": "",
+    "discountPercentage": 0,
+    "discountAmount": 0
+  },
+  "payments": [
+    {
+      "lineNo": 1,
+      "paymentTypeId": "REPLACE_WITH_ACTIVE_PAY_ID",
+      "amount": 10.000,
+      "accountNo": "",
+      "currencyId": "001",
+      "exchangeRate": 1,
+      "currencyAmount": 10.000,
+      "chequeBank": "",
+      "chequeNo": "",
+      "chequeDate": null
+    }
+  ]
+}

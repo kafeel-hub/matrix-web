@@ -1,0 +1,69 @@
+{
+  "header": {
+    "invoiceDate": "2026-09-16",
+    "invoiceType": 0,
+    "referenceNo": "0.000",
+    "customerName": "Nadeem",
+    "customerCivilId": "287090904679",
+    "customerMobile": "50852033",
+    "customerPhone": "50852033",
+    "customerCountryCode": "KUWAIT",
+    "customerAreaCode": "001",
+    "customerBlock": "12",
+    "customerJaddah": "1",
+    "customerStreet": "3",
+    "customerBuilding": "burj nauf",
+    "customerFloor": "2",
+    "customerFlat": "12",
+    "customerPaciNo": "145236",
+    "salesmanId": "201",
+    "goldRate": 200,
+    "netAmount": 58.115,
+    "discountAmount": 0,
+    "scrapAmount": 0,
+    "remarks": ""
+  },
+  "items": [
+    {
+      "lineNo": 1,
+      "itemId": "G013520057",
+      "barcode": "GJW0001",
+      "itemDescription": "أسوار 19",
+      "transactionTypeId": 0,
+      "makingTypeId": 0,
+      "goldPurity": 875,
+      "quantity": 1,
+      "goldWeight": 10,
+      "stoneWeight": 0,
+      "goldNetWeight": 9.850,
+      "goldPureWeight": 8.627,
+      "goldRate": 5.9,
+      "makingRate": 0,
+      "makingCost": 0,
+      "rate": 0,
+      "amount": 58.115,
+      "makingAmount": 0,
+      "goldAmount": 0,
+      "stoneAmount": 0,
+      "taxPercentage": 1,
+      "deductionWeight": 0.15,
+      "deductionPercentage": 1.5,
+      "repairFlag": false,
+      "repairWeight": 0
+    }
+  ],
+  "payments": [
+    {
+      "lineNo": 1,
+      "paymentTypeId": "03",
+      "amount": 58.115,
+      "currencyId": "03",
+      "exchangeRate": 1,
+      "currencyAmount": 58.115,
+      "authorizationCode": "",
+      "accountNo": "123",
+      "chequeNo": "123",
+      "chequeDate": null
+    }
+  ]
+}

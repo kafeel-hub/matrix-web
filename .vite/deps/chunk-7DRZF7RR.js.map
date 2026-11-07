@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@mui/material/utils/useEnhancedEffect.js", "../../node_modules/@mui/material/utils/unsupportedProp.js"],
+  "sourcesContent": ["'use client';\n\nimport useEnhancedEffect from '@mui/utils/useEnhancedEffect';\nexport default useEnhancedEffect;", "import unsupportedProp from '@mui/utils/unsupportedProp';\nexport default unsupportedProp;"],
+  "mappings": ";;;;;;AAGA,IAAOA,6BAAQ;;;ACFf,IAAO,0BAAQ;",
+  "names": ["useEnhancedEffect_default"]
+}

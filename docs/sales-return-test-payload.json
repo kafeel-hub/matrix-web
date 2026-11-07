@@ -1,0 +1,62 @@
+{
+  "header": {
+    "invoiceDate": "2026-09-16",
+    "invoiceType": 0,
+    "invoiceAgainst": 0,
+    "referenceNo": "",
+    "customerName": "Test Return Customer",
+    "customerCivilId": "TEST-CIVIL",
+    "customerMobile": "50000000",
+    "customerPhone": "50000000",
+    "customerCountryCode": "KW",
+    "customerAreaCode": "001",
+    "salesmanId": "202",
+    "goldRate": 42,
+    "totalAmount": 525.000,
+    "netAmount": 525.000,
+    "discountAmount": 0,
+    "remarks": "API GRET test",
+    "originalInvoiceYear": 2026,
+    "originalInvoiceNo": "1",
+    "originalInvoiceDate": "2026-09-16"
+  },
+  "items": [
+    {
+      "lineNo": 1,
+      "itemId": "GMG50002",
+      "barcode": "TESTFAKE-14",
+      "itemDescription": "Test return item",
+      "goldPurity": 875,
+      "quantity": 1,
+      "goldWeight": 26.33,
+      "stoneWeight": 0,
+      "goldNetWeight": 26.33,
+      "goldPureWeight": 23.05,
+      "goldRate": 0,
+      "makingRate": 2.063,
+      "rate": 10,
+      "amount": 525.000,
+      "makingAmount": 54.31879,
+      "goldAmount": 0,
+      "stoneAmount": 0,
+      "taxPercentage": 0,
+      "deductionWeight": 0,
+      "deductionPercentage": 0,
+      "repairFlag": false
+    }
+  ],
+  "payments": [
+    {
+      "lineNo": 1,
+      "paymentTypeId": "01",
+      "amount": 525.000,
+      "currencyId": "01",
+      "exchangeRate": 1,
+      "currencyAmount": 525.000,
+      "authorizationCode": "",
+      "accountNo": "",
+      "chequeNo": "",
+      "chequeDate": null
+    }
+  ]
+}
